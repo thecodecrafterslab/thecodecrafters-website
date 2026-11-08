@@ -293,7 +293,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
           <p class="sub">Tell us what you want to build. We'll reply within one business day with questions and a rough plan.</p>
           <div class="email"><code id="emailAddr">hello@thecodecrafterslab.com</code><button class="copy" id="copyBtn" type="button">Copy</button></div>
         </div>
-        <form id="enquiry" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <form id="enquiry" name="enquiry" method="POST" novalidate>
           <p hidden><label>Leave this empty <input name="bot-field"></label></p>
           <input type="hidden" name="subject" value="New enquiry from thecodecrafterslab.com">
           <div class="row">
@@ -335,8 +335,9 @@ document.getElementById('enquiry').addEventListener('submit',e=>{
   n.hidden=false;
   if(!name||!/^\S+@\S+\.\S+$/.test(em)){n.textContent='Add your name and a valid email address so we can reply.';return}
   const btn=f.querySelector('button[type=submit]');btn.disabled=true;n.textContent='Sending...';
-  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
-   .then(r=>{if(!r.ok)throw new Error();n.textContent='Thanks, '+name+'. We have your enquiry and will reply within one business day.';f.reset()})
+  const fd=new FormData(f);if(fd.get('bot-field'))return;
+  fetch('https://formsubmit.co/ajax/support@thecodecrafterslab.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:fd.get('name'),email:fd.get('email'),need:fd.get('type'),message:fd.get('msg'),_subject:'New enquiry from thecodecrafterslab.com',_template:'table',_captcha:'false'})})
+   .then(r=>r.json()).then(j=>{if(!(j.success===true||j.success==='true'))throw new Error();n.textContent='Thanks, '+name+'. We have your enquiry and will reply within one business day.';f.reset()})
    .catch(()=>{n.textContent='That did not send. Please email us at the address on the left.'})
    .finally(()=>{btn.disabled=false});
 });
