@@ -57,6 +57,8 @@ header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background
 .bt-lab{font-family:var(--mono);font-size:.62rem;font-weight:500;letter-spacing:.32em;color:var(--accent);margin-top:4px}
 .links a{text-decoration:none;font-weight:500;color:var(--muted)}
 .links a:hover{color:var(--ink)}
+.links a.btn,.links a.btn:hover{color:var(--accent-ink)}
+.links a[aria-current]{color:var(--ink);font-weight:600}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:600;text-decoration:none;border:0;font:inherit;font-weight:600;cursor:pointer}
 .btn:hover{filter:brightness(1.08)}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
@@ -168,6 +170,10 @@ textarea{min-height:110px;resize:vertical}
 .band figcaption{position:absolute;left:0;bottom:0;padding:14px 18px;font-family:var(--mono);font-size:.75rem;color:#fff;background:linear-gradient(to top,rgba(0,0,0,.55),transparent);right:0}
 @media (max-width:700px){.band img{aspect-ratio:16/9}}
 .about-photo{width:100%;aspect-ratio:11/8;max-width:100%;object-fit:cover;border-radius:18px;display:block;margin-bottom:20px}
+.promo{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));background:var(--accent-soft);color:var(--ink);text-decoration:none;font-weight:500;text-align:center}
+.promo:hover .promo-go{text-decoration:underline}
+.promo-tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:4px 10px;border-radius:999px}
+.promo-go{color:var(--accent);font-weight:700}
 footer{padding-block:36px 48px;color:var(--muted);font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 </style>
@@ -183,12 +189,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <a href="#services">Services</a>
       <a href="#process">How we work</a>
       <a href="#about">About</a>
+      <a href="free-prototype.html">Free prototype</a>
       <a class="btn" href="#contact">Start a project</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
+<a class="promo" href="free-prototype.html"><span class="promo-tag">Limited offer</span><span>Free app prototype for 5 businesses. Applications close 30 November.</span><span class="promo-go">Apply →</span></a>
+
   <div class="hero">
     <div class="wrap">
       <div>
