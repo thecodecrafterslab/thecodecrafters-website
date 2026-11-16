@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="The Code Crafters Lab designs, builds and launches mobile apps, web platforms and websites for businesses in Australia and the Pacific.">
+<meta name="description" content="The Code Crafters Lab designs, builds and launches mobile apps, web platforms and websites for businesses in the UK, Europe, Asia, the Middle East, Australia and the Pacific.">
 <meta property="og:title" content="The Code Crafters Lab">
 <meta property="og:description" content="App and web studio. From first sketch to the App Store and Google Play.">
 <meta property="og:image" content="https://thecodecrafterslab.com/logo-horizontal@2x.png">
@@ -151,7 +151,7 @@ form{display:grid;gap:14px;min-width:0}
 label{display:grid;gap:6px;font-size:.9rem;font-weight:500}
 input,select,textarea{font:inherit;padding:12px 14px;border-radius:12px;border:1px solid color-mix(in srgb,var(--paper) 25%,var(--ink));background:color-mix(in srgb,var(--paper) 8%,var(--ink));color:var(--paper);width:100%}
 textarea{min-height:110px;resize:vertical}
-.formnote{font-size:.9rem;color:var(--accent)}
+.formnote{font-size:.9rem;color:color-mix(in srgb,var(--paper) 85%,var(--ink))}
 .email{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .email code{font-family:var(--mono);font-size:.95rem;user-select:all}
 .copy{background:transparent;border:1px solid color-mix(in srgb,var(--paper) 30%,var(--ink));color:var(--paper);border-radius:999px;padding:6px 14px;font:inherit;font-size:.85rem;cursor:pointer}
@@ -286,7 +286,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       </div>
       <div><img class="about-photo" src="sydney.jpg" alt="Sydney Harbour with the Opera House and city skyline" loading="lazy"><dl class="facts">
         <div><dt>Based in</dt><dd>Sydney, Australia · Suva, Fiji</dd></div>
-        <div><dt>Time zones</dt><dd>AEDT · FJT</dd></div>
+        <div><dt>Time zones</dt><dd>GMT · AEDT · FJT</dd></div>
         <div><dt>Platforms</dt><dd>Web · iOS · Android</dd></div>
         <div><dt>Payments</dt><dd>Stripe · App Store · Google Play</dd></div>
       </dl></div>
@@ -344,8 +344,8 @@ document.getElementById('enquiry').addEventListener('submit',e=>{
   const name=document.getElementById('name').value.trim(),em=document.getElementById('email').value.trim();
   n.hidden=false;
   if(!name||!/^\S+@\S+\.\S+$/.test(em)){n.textContent='Add your name and a valid email address so we can reply.';return}
-  const btn=f.querySelector('button[type=submit]');btn.disabled=true;n.textContent='Sending...';
   const fd=new FormData(f);if(fd.get('bot-field'))return;
+  const btn=f.querySelector('button[type=submit]');btn.disabled=true;n.textContent='Sending...';
   fetch('https://formsubmit.co/ajax/support@thecodecrafterslab.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:fd.get('name'),email:fd.get('email'),need:fd.get('type'),message:fd.get('msg'),_subject:'New enquiry from thecodecrafterslab.com',_template:'table',_captcha:'false'})})
    .then(r=>r.json()).then(j=>{if(!(j.success===true||j.success==='true'))throw new Error();n.textContent='Thanks, '+name+'. We have your enquiry and will reply within one business day.';f.reset()})
    .catch(()=>{n.textContent='That did not send. Please email us at the address on the left.'})
