@@ -6,7 +6,13 @@
 <meta name="description" content="Get a free clickable prototype of your app or website from The Code Crafters Lab. 5 places, applications close 30 November 2026.">
 <meta property="og:title" content="Free app prototype · The Code Crafters Lab">
 <meta property="og:description" content="Tell us your idea. We build a clickable prototype you can try on your phone, free. 5 places only.">
-<meta property="og:image" content="https://thecodecrafterslab.com/logo-horizontal@2x.png">
+<link rel="canonical" href="https://thecodecrafterslab.com/free-prototype.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecodecrafterslab.com/free-prototype.html">
+<meta property="og:image" content="https://thecodecrafterslab.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/favicon-180.png">
@@ -221,8 +227,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <h1 style="margin-top:16px">Your app idea, <em>clickable in 7 days.</em> Free.</h1>
         <p class="lede">Tell us what you want to build. We'll turn it into a working prototype you can tap through on your own phone, so you can show investors, staff or customers before spending on a full build.</p>
         <div class="cta">
-          <a class="btn" href="#apply">Apply for a free prototype</a>
-          <span class="seats"><i></i><i></i><i></i><i></i><i></i> 5 places · closes 30 Nov 2026</span>
+          <a class="btn" id="heroCta" href="#apply">Apply for a free prototype</a>
+          <span class="seats" id="seats"><i></i><i></i><i></i><i></i><i></i> 5 places · closes 30 Nov 2026</span>
         </div>
       </div>
       <div class="offer-card">
@@ -283,7 +289,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div>
           <p class="label">Apply</p>
           <h2 style="margin-top:12px">Apply for a free prototype</h2>
-          <p class="sub">Applications close 30 November 2026. We reply to everyone by 5 December.</p>
+          <p class="sub" id="applySub">Applications close 30 November 2026. We reply to everyone by 5 December.</p>
           <div class="email"><code id="emailAddr">support@thecodecrafterslab.com</code><button class="copy" id="copyBtn" type="button">Copy</button></div>
         </div>
         <form id="enquiry" name="prototype" novalidate>
@@ -322,12 +328,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <footer>
   <div class="wrap">
     <span>© 2026 The Code Crafters Lab · thecodecrafterslab.com</span>
-    <span>Photos from Unsplash</span>
-    <span style="flex-basis:100%">Code Crafters Lab Limited, registered in England and Wales, company no. 15984273</span>
+    <span><a href="/privacy.html">Privacy</a> · Photos from Unsplash</span>
+    <span style="flex-basis:100%">Code Crafters Lab Limited, registered in England and Wales, company no. 15984273. Registered office: 12 Sullivan Road, Camberley, England, GU15 3BF.</span>
   </div>
 </footer>
 
 <script>
+const PROMO_END=new Date('2026-11-30T23:59:59+11:00');
+if(Date.now()>PROMO_END){document.getElementById('enquiry').hidden=true;document.getElementById('applySub').textContent='Applications for this round closed on 30 November 2026. Email us and we will let you know when the next round opens.';document.getElementById('heroCta').textContent='Applications closed';document.getElementById('seats').hidden=true}
 const menuBtn=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
 menuBtn.addEventListener('click',()=>{const o=links.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));

@@ -6,7 +6,13 @@
 <meta name="description" content="The Code Crafters Lab designs, builds and launches mobile apps, web platforms and websites for businesses in the UK, Europe, Asia, the Middle East, Australia and the Pacific.">
 <meta property="og:title" content="The Code Crafters Lab">
 <meta property="og:description" content="App and web studio. From first sketch to the App Store and Google Play.">
-<meta property="og:image" content="https://thecodecrafterslab.com/logo-horizontal@2x.png">
+<link rel="canonical" href="https://thecodecrafterslab.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thecodecrafterslab.com/">
+<meta property="og:image" content="https://thecodecrafterslab.com/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/icon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/favicon-180.png">
@@ -189,14 +195,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <a href="#services">Services</a>
       <a href="#process">How we work</a>
       <a href="#about">About</a>
-      <a href="free-prototype.html">Free prototype</a>
+      <a id="promoLink" href="free-prototype.html">Free prototype</a>
       <a class="btn" href="#contact">Start a project</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
-<a class="promo" href="free-prototype.html"><span class="promo-tag">Limited offer</span><span>Free app prototype for 5 businesses. Applications close 30 November.</span><span class="promo-go">Apply →</span></a>
+<a class="promo" id="promoBar" href="free-prototype.html"><span class="promo-tag">Limited offer</span><span>Free app prototype for 5 businesses. Applications close 30 November.</span><span class="promo-go">Apply →</span></a>
 
   <div class="hero">
     <div class="wrap">
@@ -211,7 +217,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       </div>
       <div class="shot"><img class="photo" src="hero-phone.jpg" alt="A hand holding a phone showing a mobile app dashboard in front of a laptop"><div class="term" aria-label="Example release log for an app launch">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="t">release.log</span></div>
-<pre><span class="line"><span class="dim">$</span> crafters ship --app xcare --version 1.0.0</span><span class="line"><span class="ok">✓</span> tests passed <span class="dim">(214/214)</span></span><span class="line"><span class="ok">✓</span> web build deployed <span class="dim">→ xcare.app</span></span><span class="line"><span class="ok">✓</span> iOS build 1.0.0 (12) uploaded</span><span class="line"><span class="ok">✓</span> Android bundle uploaded <span class="dim">→ internal track</span></span><span class="line"><span class="hl">●</span> App Store review: <span class="hl">waiting for review</span></span><span class="line"><span class="hl">●</span> Google Play review: <span class="hl">in review</span></span><span class="line"><span class="dim">$</span> <span class="caret"></span></span></pre>
+<pre><span class="line"><span class="dim">$</span> crafters ship --app your-app --version 1.0.0</span><span class="line"><span class="ok">✓</span> tests passed <span class="dim">(214/214)</span></span><span class="line"><span class="ok">✓</span> web build deployed <span class="dim">→ production</span></span><span class="line"><span class="ok">✓</span> iOS build 1.0.0 (12) uploaded</span><span class="line"><span class="ok">✓</span> Android bundle uploaded <span class="dim">→ internal track</span></span><span class="line"><span class="hl">●</span> App Store review: <span class="hl">waiting for review</span></span><span class="line"><span class="hl">●</span> Google Play review: <span class="hl">in review</span></span><span class="line"><span class="dim">$</span> <span class="caret"></span></span></pre>
       </div></div>
     </div>
   </div>
@@ -255,7 +261,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div class="svc"><h3>Mobile apps</h3><p>iPhone and Android apps built from a single codebase, published under your brand on the App Store and Google Play.</p><ul><li>iOS</li><li>Android</li><li>In-app subscriptions</li></ul></div>
         <div class="svc"><h3>Web apps &amp; SaaS</h3><p>Customer portals, marketplaces and subscription software with user accounts, dashboards and payments built in.</p><ul><li>Logins &amp; roles</li><li>Stripe billing</li><li>Admin dashboards</li></ul></div>
         <div class="svc"><h3>Websites</h3><p>Clear, fast websites that work on every phone, with pages you can update yourself.</p><ul><li>Business sites</li><li>Ministries &amp; NGOs</li><li>Project sites</li></ul></div>
-        <div class="svc"><h3>Hosting &amp; care</h3><p>We host, back up, monitor and update what we build, so your site or app stays secure and online.</p><ul><li>Daily backups</li><li>Security updates</li><li>Monthly plans</li></ul></div>
+        <div class="svc"><h3>Hosting &amp; care</h3><p>We host, back up, monitor and update what we build, so your site or app stays secure and online.</p><ul><li>Regular backups</li><li>Security updates</li><li>Monthly plans</li></ul></div>
       </div>
     </div>
   </section>
@@ -281,7 +287,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="wrap about">
       <div>
         <p class="label">About</p>
-        <p class="big" style="margin-top:14px">We work with businesses in the UK, Europe, Asia, the Middle East, Australia and the Pacific that need software built properly, by people who answer in their time zone.</p>
+        <p class="big" style="margin-top:14px">We work with businesses in the UK, Europe, Asia, the Middle East, Australia and the Pacific that need software built properly, by a team that works across their time zones.</p>
         <p style="margin-top:18px;color:var(--muted)">The Code Crafters Lab builds its own products and helps clients launch theirs. We use modern, proven tools and AI-assisted development to deliver faster, without cutting corners on security or quality.</p>
       </div>
       <div><img class="about-photo" src="sydney.jpg" alt="Sydney Harbour with the Opera House and city skyline" loading="lazy"><dl class="facts">
@@ -326,12 +332,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <footer>
   <div class="wrap">
     <span>© 2026 The Code Crafters Lab · thecodecrafterslab.com</span>
-    <span>Photos from Unsplash</span>
-    <span style="flex-basis:100%">Code Crafters Lab Limited, registered in England and Wales, company no. 15984273</span>
+    <span><a href="/privacy.html">Privacy</a> · Photos from Unsplash</span>
+    <span style="flex-basis:100%">Code Crafters Lab Limited, registered in England and Wales, company no. 15984273. Registered office: 12 Sullivan Road, Camberley, England, GU15 3BF.</span>
   </div>
 </footer>
 
 <script>
+const PROMO_END=new Date('2026-11-30T23:59:59+11:00');
+if(Date.now()>PROMO_END){document.getElementById('promoBar').hidden=true;document.getElementById('promoLink').hidden=true}
 const menuBtn=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
 menuBtn.addEventListener('click',()=>{const o=links.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o)});
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
